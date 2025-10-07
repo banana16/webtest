@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Game Night Central</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#1717cf",
+            "background-light": "#f6f6f8",
+            "background-dark": "#111121",
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="flex flex-col min-h-screen">
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+<div class="container mx-auto px-4">
+<div class="flex items-center justify-between py-4 border-b border-gray-200 dark:border-gray-800">
+<div class="flex items-center gap-8">
+<a class="flex items-center gap-3 text-gray-900 dark:text-white" href="#">
+<svg class="h-6 w-6 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+</svg>
+<h1 class="text-xl font-bold">Game Night Central</h1>
+</a>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">New Arrivals</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Popular Games</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Promotions</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">About Us</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<input class="bg-gray-100 dark:bg-gray-800 border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-primary focus:border-primary w-48 lg:w-64 transition-all duration-300 focus:w-56 lg:focus:w-72" placeholder="Search games..." type="search"/>
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<button class="relative p-2 rounded-full hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-white text-xs font-bold">3</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<section class="relative h-[60vh] min-h-[400px] max-h-[600px] flex items-center justify-center text-center text-white">
+<div class="absolute inset-0 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC3LgT2QR8GAC7GyYS6_KrOo9dIMvxbMrcvOj2yA3NlmBd1gtX8tWMAg505o1ZvgdiO8JsON1qrfb0HBCCOiPV3W3QdgE3kLt-gxHXaqaAPyjWG29irrowitIPyz9ESfJ0uURzTMGdF6b14lW3tIreNpFi2idfeoaQ5CgS0dt4TOFlMBb334ZXexe5MyzYViuXwTo3fcmeICKpZDvLAGtk0S4xOyRD-mTLVtrjHEK2OB9QYA7_0zzW5XLfUE06jj3ql328bx_02cek");'></div>
+<div class="absolute inset-0 bg-black/50"></div>
+<div class="relative z-10 p-4 max-w-4xl mx-auto">
+<h1 class="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">Welcome to Game Night Central</h1>
+<p class="text-lg md:text-xl mb-8 drop-shadow">Your one-stop shop for all things board games. Discover new arrivals, popular classics, and exciting promotions.</p>
+<a class="bg-primary text-white font-bold py-3 px-8 rounded-lg hover:bg-opacity-90 transition-transform transform hover:scale-105 shadow-lg" href="#">Shop Now</a>
+</div>
+</section>
+<div class="container mx-auto px-4 py-12 md:py-16">
+<section class="mb-16">
+<div class="text-center mb-12">
+<h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white">Top-Selling Board Games</h2>
+<p class="text-lg text-gray-600 dark:text-gray-400 mt-2">Discover our most popular games, loved by players worldwide.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white dark:bg-background-dark/50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+<div class="relative">
+<div class="w-full h-72 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAW-eFd69X3e0NrckSckEkRDBGwJ1FdNTexsIbUjOCUbFoFaEvv2qrPjGuoi38PBVSMv65V_OnlgFnjk0pAJZh_1BCcTKMbS2r61ix3ZAuA0Y9AVuWEFvXgPjHUOALrCVvl1Pp2SMNHd2Wm7jWk_69JBsLlEIkiD4XxB2A7L9qsZsKpdq9iH3NofzWGswjW8rnsydc71mahqM50Q7RAgqAJlKqUfvnq-zL3kGMWSnml8_mC13hzvEh4XGztjqHaVmvSo5MvX2FXAAA");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h3 class="font-bold text-2xl text-white mb-2">Catan</h3>
+</div>
+</div>
+<div class="p-6">
+<p class="text-gray-700 dark:text-gray-300 mb-4">Trade, build, and settle the island of Catan in this modern classic. Compete for resources and victory points to become the dominant force on the island.</p>
+<a class="font-bold text-primary hover:underline" href="#">View Details</a>
+</div>
+</div>
+<div class="bg-white dark:bg-background-dark/50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+<div class="relative">
+<div class="w-full h-72 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDvR81dtz9qmsbVRuxUZZe1PyPPp53O72-uRtCBtnwsUjnSSEy7eEjNeqC4k_5u--nfoPEVz3iSfrOG1w3VLfNmMPq9Ik8oDHNMhfgWsz7p-y3dn4PMUJAwHkNdMuRISD_1ybWAumH5HRRzKrbXQzzNMxE334wegSVSYIiP6traL_4TEmOlVZ_ej014m4yHmXymz5JDqCdqt7UnDGT0tRTshg2xjcvJKB4OBhXXwQ4XIWIUjEa8ih7ZcnuaYUvqUbwnHrEx41m9D60");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h3 class="font-bold text-2xl text-white mb-2">Ticket to Ride</h3>
+</div>
+</div>
+<div class="p-6">
+<p class="text-gray-700 dark:text-gray-300 mb-4">A cross-country train adventure where players collect and play matching train cards to claim railway routes connecting cities across North America.</p>
+<a class="font-bold text-primary hover:underline" href="#">View Details</a>
+</div>
+</div>
+<div class="bg-white dark:bg-background-dark/50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+<div class="relative">
+<div class="w-full h-72 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAq_swfUM5kamHj7UMmwiGWRAMveRu6a9Mkg6-JGlhbRgD-EcT97f24Rnl-NYWO5io8m0btQn1LQCFYC4kp83knOSSMqTaj6hcmTu1m8lURqlFWDhrrdKUarmwnawbH_U5K06VezeTGPwboOYaZlPbx4luQL7Up99XX0jcSf17iRz2jvlGPWjuR4nd7R791JraeXpXAfVA0I7BjNM-gSPi_iBLql-tzbJk2OM5CNIVXH0XjE_YpTNEC-qkCRLWkblGPXt7NvC0Od9w");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h3 class="font-bold text-2xl text-white mb-2">Pandemic</h3>
+</div>
+</div>
+<div class="p-6">
+<p class="text-gray-700 dark:text-gray-300 mb-4">Work together as a team of specialists to stop the spread of deadly diseases. A truly cooperative board game where you all win or you all lose.</p>
+<a class="font-bold text-primary hover:underline" href="#">View Details</a>
+</div>
+</div>
+</div>
+</section>
+<section class="mb-16">
+<h2 class="text-3xl font-bold mb-8 text-gray-900 dark:text-white">New Arrivals</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+<div class="bg-background-light dark:bg-background-dark/50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+<div class="w-full h-64 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuASjWNr5T7mN9X0ZrnefDKOzk3Jf7DZKSuQOFYbAt4UOGw1jJmGGpsmKN1Gox1QILLczmD7MigX5fZ8Uh2xG58-Fy7c1N88kojnmJklMXnT7fT4312haG61ENlNtPM4922Ec7WOsOFaNlBm7F1lKmEdqEBmghMafhoAeoawJCfPpUKtbNQZPaKbhU4RH0IvxLxhTQQob5G1Sj97VRhfiO-j1aNy3Q9S8wkcRQMwE8sOLl1lY-3Q2cswV4dthfyDzYw6HiKau9CNMaQ");'></div>
+<div class="p-4">
+<h3 class="font-bold text-lg mb-1 text-gray-900 dark:text-white">The Lost Expedition</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400">Embark on a perilous journey through the Amazon.</p>
+</div>
+</div>
+<div class="bg-background-light dark:bg-background-dark/50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+<div class="w-full h-64 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA3tw6ROEoty6hCPWBNtkpKifTNi2WwS-Dt-i3NTloj9_-qUyx7DvVOhpJTBD320JH1weAxCaDg2ElT_wB8Pv9-h8IpqUzKhlSnlmQB7hBgQSGmPRdlfkvODbMFX_e0BlZO_ImE-JaCfeR_P4u4C8uQ6jbmqcia6gsCkFb55kk8Vm22hyVg0r1YnRfth4h3QvrypFWgFqw4lXjUNclsSSu87kM9qR2Ow67n2aqPFmZ5oa-H9Ot9e4hDWtQIqPcZMfGmXjPxVlUlM1o");'></div>
+<div class="p-4">
+<h3 class="font-bold text-lg mb-1 text-gray-900 dark:text-white">Cosmic Encounters</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400">Negotiate, trade, and conquer in this intergalactic adventure.</p>
+</div>
+</div>
+<div class="bg-background-light dark:bg-background-dark/50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+<div class="w-full h-64 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuChl_Uu4MoGkaCf4LN2dcdQWnXltW-HbopxtFKtOGqelafbb8rbGR3AamzHit8sWp_0LUK3z956J875x0o3xR-U9pvYakLTXLTv975bH26Sl00O3y3Q77Ht8fLazw9UXxiZsl09b7iZ_zYp8w4jjOYCbcoZqK4nwBpN7m8EPj9Xq5qIyTdc08dMcXF1s2pr65dj7DRv0EFSR0vFIGpMvNZl9yVSzAGgmfm0Wnclamkk_IBUuJnIfR41VkSGLnea3APsZT5ZK8n5Kfk");'></div>
+<div class="p-4">
+<h3 class="font-bold text-lg mb-1 text-gray-900 dark:text-white">Gloomhaven: Jaws of the Lion</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400">Explore the dark corners of Gloomhaven.</p>
+</div>
+</div>
+<div class="bg-background-light dark:bg-background-dark/50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+<div class="w-full h-64 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAW-eFd69X3e0NrckSckEkRDBGwJ1FdNTexsIbUjOCUbFoFaEvv2qrPjGuoi38PBVSMv65V_OnlgFnjk0pAJZh_1BCcTKMbS2r61ix3ZAuA0Y9AVuWEFvXgPjHUOALrCVvl1Pp2SMNHd2Wm7jWk_69JBsLlEIkiD4XxB2A7L9qsZsKpdq9iH3NofzWGswjW8rnsydc71mahqM50Q7RAgqAJlKqUfvnq-zL3kGMWSnml8_mC13hzvEh4XGztjqHaVmvSo5MvX2FXAAA");'></div>
+<div class="p-4">
+<h3 class="font-bold text-lg mb-1 text-gray-900 dark:text-white">Catan</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400">Trade resources and build settlements on the island of Catan.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="mb-16">
+<h2 class="text-3xl font-bold mb-8 text-gray-900 dark:text-white">Popular Games</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
+<div class="group">
+<div class="aspect-[3/4] w-full bg-cover bg-center rounded-lg overflow-hidden transform group-hover:scale-105 transition-transform duration-300" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDvR81dtz9qmsbVRuxUZZe1PyPPp53O72-uRtCBtnwsUjnSSEy7eEjNeqC4k_5u--nfoPEVz3iSfrOG1w3VLfNmMPq9Ik8oDHNMhfgWsz7p-y3dn4PMUJAwHkNdMuRISD_1ybWAumH5HRRzKrbXQzzNMxE334wegSVSYIiP6traL_4TEmOlVZ_ej014m4yHmXymz5JDqCdqt7UnDGT0tRTshg2xjcvJKB4OBhXXwQ4XIWIUjEa8ih7ZcnuaYUvqUbwnHrEx41m9D60");'></div>
+<div class="mt-2">
+<h3 class="font-semibold text-gray-900 dark:text-white">Ticket to Ride</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400">$49.99</p>
+</div>
+</div>
+<div class="group">
+<div class="aspect-[3/4] w-full bg-cover bg-center rounded-lg overflow-hidden transform group-hover:scale-105 transition-transform duration-300" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDiNrV1g7J5fXdCKAfK8lkee6l21a6zU11-UgIzf8j5Gk5diRKc2cuFMZvTZcuFTfdZL7JGk-K_zFa9pf0FAJOcOLbvbPbXISji2E7SWmivrVnOlpgwTmEZQWmgQJe22Fo3rnXoDFxJjY9sU5SKDUocnN-HxgHqOxednz8ngGs0S-20-ytZB7TpUHBH5Mb7Lo_LK_FtKucPHv4FOlyQ5Sd963VLItF8oJpxsl0D5eBl3Z9g69K_eUai6thtPwbd91i1lzK-Ti-4bTU");'></div>
+<div class="mt-2">
+<h3 class="font-semibold text-gray-900 dark:text-white">7 Wonders</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400">$59.99</p>
+</div>
+</div>
+<div class="group">
+<div class="aspect-[3/4] w-full bg-cover bg-center rounded-lg overflow-hidden transform group-hover:scale-105 transition-transform duration-300" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAq_swfUM5kamHj7UMmwiGWRAMveRu6a9Mkg6-JGlhbRgD-EcT97f24Rnl-NYWO5io8m0btQn1LQCFYC4kp83knOSSMqTaj6hcmTu1m8lURqlFWDhrrdKUarmwnawbH_U5K06VezeTGPwboOYaZlPbx4luQL7Up99XX0jcSf17iRz2jvlGPWjuR4nd7R791JraeXpXAfVA0I7BjNM-gSPi_iBLql-tzbJk2OM5CNIVXH0XjE_YpTNEC-qkCRLWkblGPXt7NvC0Od9w");'></div>
+<div class="mt-2">
+<h3 class="font-semibold text-gray-900 dark:text-white">Pandemic</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400">$39.99</p>
+</div>
+</div>
+<div class="group">
+<div class="aspect-[3/4] w-full bg-cover bg-center rounded-lg overflow-hidden transform group-hover:scale-105 transition-transform duration-300" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAW-eFd69X3e0NrckSckEkRDBGwJ1FdNTexsIbUjOCUbFoFaEvv2qrPjGuoi38PBVSMv65V_OnlgFnjk0pAJZh_1BCcTKMbS2r61ix3ZAuA0Y9AVuWEFvXgPjHUOALrCVvl1Pp2SMNHd2Wm7jWk_69JBsLlEIkiD4XxB2A7L9qsZsKpdq9iH3NofzWGswjW8rnsydc71mahqM50Q7RAgqAJlKqUfvnq-zL3kGMWSnml8_mC13hzvEh4XGztjqHaVmvSo5MvX2FXAAA");'></div>
+<div class="mt-2">
+<h3 class="font-semibold text-gray-900 dark:text-white">Catan</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400">$49.99</p>
+</div>
+</div>
+<div class="group hidden lg:block">
+<div class="aspect-[3/4] w-full bg-cover bg-center rounded-lg overflow-hidden transform group-hover:scale-105 transition-transform duration-300" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuChl_Uu4MoGkaCf4LN2dcdQWnXltW-HbopxtFKtOGqelafbb8rbGR3AamzHit8sWp_0LUK3z956J875x0o3xR-U9pvYakLTXLTv975bH26Sl00O3y3Q77Ht8fLazw9UXxiZsl09b7iZ_zYp8w4jjOYCbcoZqK4nwBpN7m8EPj9Xq5qIyTdc08dMcXF1s2pr65dj7DRv0EFSR0vFIGpMvNZl9yVSzAGgmfm0Wnclamkk_IBUuJnIfR41VkSGLnea3APsZT5ZK8n5Kfk");'></div>
+<div class="mt-2">
+<h3 class="font-semibold text-gray-900 dark:text-white">Gloomhaven</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400">$139.99</p>
+</div>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-3xl font-bold mb-8 text-gray-900 dark:text-white">Current Promotions</h2>
+<div class="bg-primary/10 dark:bg-primary/20 rounded-xl overflow-hidden flex flex-col md:flex-row items-center">
+<div class="w-full md:w-1/2 lg:w-2/5 h-64 md:h-auto bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuABDP_SQSmWrcdUltbsrE1_qkzXD2mtlQRj_49nHrLHm2PCsYKDqVXJ-xk-0PWeRrqWP4t8R9QD9YOsM8_MCkdRlJbcA_fusxCMT6xJ__ow6xXqAgQ_qk9x18pZGqaZ2tn-v2beTxWOen2gC4l6hN-XKjmfAydOt7jIZOhOu6aRJjGzd3zT3-U_-yKLBrg3pvcKcLUVmf33dbRWz6ktwOExxRihoaO5G2pLnPMGf73vc79IlZiTKrk26e2OKNP-NR5qUS_x6CMY9TI");'></div>
+<div class="w-full md:w-1/2 lg:w-3/5 p-8 md:p-12 text-center md:text-left">
+<h3 class="text-2xl font-bold text-primary mb-2">Summer Savings!</h3>
+<p class="text-gray-700 dark:text-gray-300 mb-6">Get <span class="font-bold text-primary text-xl">20% off</span> on select board games this summer. Don't miss out on the fun!</p>
+<a class="bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-transform transform hover:scale-105 inline-block shadow-md" href="#">Shop Sale</a>
+</div>
+</div>
+</section>
+</div>
+</main>
+<footer class="bg-gray-100 dark:bg-background-dark/50">
+<div class="container mx-auto px-4 py-8">
+<div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6">
+<div class="flex items-center gap-2 text-gray-800 dark:text-gray-200">
+<svg class="h-5 w-5 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+</svg>
+<span class="font-bold">Game Night Central</span>
+</div>
+<nav class="flex flex-wrap justify-center gap-4 md:gap-6 text-sm">
+<a class="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors" href="#">Contact Us</a>
+<a class="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors" href="#">FAQ</a>
+<a class="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors" href="#">Terms of Service</a>
+</nav>
+<p class="text-sm text-gray-500 dark:text-gray-400">© 2024. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>

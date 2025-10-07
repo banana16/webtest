@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kanombordgame</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1717cf",
+              "background-light": "#f6f6f8",
+              "background-dark": "#111121",
+            },
+            fontFamily: {
+              display: ["Plus Jakarta Sans"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* ===== 🧩 พื้นหลังหมากรุกแบบเคลื่อนไหว ===== */
+      .chess-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 200%;
+        height: 200%;
+        background-image: 
+          linear-gradient(45deg, #ccc 25%, transparent 25%),
+          linear-gradient(-45deg, #ccc 25%, transparent 25%),
+          linear-gradient(45deg, transparent 75%, #ccc 75%),
+          linear-gradient(-45deg, transparent 75%, #ccc 75%);
+        background-size: 80px 80px;
+        background-position: 0 0, 0 40px, 40px -40px, -40px 0px;
+        animation: floatPattern 40s linear infinite alternate;
+        opacity: 0.15;
+        z-index: -2;
+      }
+
+      @keyframes floatPattern {
+        from {
+          transform: translate(0px, 0px) rotate(0deg);
+        }
+        to {
+          transform: translate(-200px, -200px) rotate(5deg);
+        }
+      }
+
+      /* ===== 🎲 แผ่นบอร์ดเกมลอยไปมา ===== */
+      .board-piece {
+        position: fixed;
+        width: 100px;
+        height: 100px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        animation: floatPiece 25s ease-in-out infinite;
+        z-index: -1;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: transparent;
+      }
+
+      @keyframes floatPiece {
+        0% {
+          transform: translate(0, 0) rotate(0deg);
+        }
+        25% {
+          transform: translate(150px, 100px) rotate(15deg);
+        }
+        50% {
+          transform: translate(0, 200px) rotate(-10deg);
+        }
+        75% {
+          transform: translate(-150px, 100px) rotate(10deg);
+        }
+        100% {
+          transform: translate(0, 0) rotate(0deg);
+        }
+      }
+
+      /* แผ่นแต่ละอันจะมี delay ต่างกัน */
+      .piece-1 {
+        top: 10%;
+        left: 20%;
+        animation-delay: 0s;
+      }
+      .piece-2 {
+        top: 50%;
+        left: 70%;
+        animation-delay: 3s;
+      }
+      .piece-3 {
+        top: 70%;
+        left: 40%;
+        animation-delay: 5s;
+      }
+      .piece-4 {
+        top: 30%;
+        left: 10%;
+        animation-delay: 7s;
+      }
+      .piece-5 {
+        top: 80%;
+        left: 80%;
+        animation-delay: 9s;
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200 relative overflow-hidden"
+  >
+    <!-- 🏁 พื้นหลังหมากรุก -->
+    <div class="chess-bg"></div>
+
+    <!-- 🎲 แผ่นบอร์ดเกมลอย -->
+    <div class="board-piece piece-1"></div>
+    <div class="board-piece piece-2"></div>
+    <div class="board-piece piece-3"></div>
+    <div class="board-piece piece-4"></div>
+    <div class="board-piece piece-5"></div>
+
+    <!-- 💡 เนื้อหาหลัก -->
+    <div class="flex min-h-screen flex-col relative z-10">
+      <header class="border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-background-dark/80 backdrop-blur-sm">
+        <div
+          class="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8"
+        >
+          <div class="flex items-center gap-4">
+            <div class="h-8 w-8 text-primary">
+              <svg
+                fill="none"
+                viewBox="0 0 48 48"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+            <h1 class="text-xl font-bold text-gray-900 dark:text-white">
+              Kanombordgame
+            </h1>
+          </div>
+          <nav class="hidden items-center gap-8 md:flex">
+            <a
+              href="#"
+              class="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary"
+              >Shop</a
+            >
+            <a
+              href="#"
+              class="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary"
+              >New</a
+            >
+            <a
+              href="#"
+              class="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary"
+              >Sale</a
+            >
+            <a
+              href="#"
+              class="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary"
+              >Learn</a
+            >
+            <a
+              href="#"
+              class="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary"
+              >Events</a
+            >
+          </nav>
+          <button
+            class="hidden rounded bg-primary/10 px-4 py-2 text-sm font-bold text-primary hover:bg-primary/20 dark:bg-primary/20 dark:hover:bg-primary/30 md:block"
+          >
+            Sign in
+          </button>
+        </div>
+      </header>
+
+      <main
+        class="flex flex-1 items-center justify-center py-12 sm:px-6 lg:px-8"
+      >
+        <div class="w-full max-w-md space-y-8">
+          <div class="text-center">
+            <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white">
+              Welcome back
+            </h2>
+            <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+              Sign in to continue your adventure.
+            </p>
+          </div>
+    <script>
+      const images = [
+        "https://img2.pic.in.th/pic/crown18cfbc4b188c4947.png", // มงกุฎ
+        "https://img2.pic.in.th/pic/dice.png",                   // ลูกเต๋า
+        "https://img2.pic.in.th/pic/card.png",                   // ไพ่
+        "https://img2.pic.in.th/pic/puzzle.png",                 // จิ๊กซอว์
+        "https://img2.pic.in.th/pic/target.png",                 // เป้าหมาย
+        "https://img5.pic.in.th/file/secure-sv1/Gemini_Generated_Image_1ktyon1ktyon1kty-removebg-preview.png"
+      ];
+
+      document.querySelectorAll(".board-piece").forEach(piece => {
+        const randomImage = images[Math.floor(Math.random() * images.length)];
+        piece.style.backgroundImage = `url('${randomImage}')`;
+      });
+    </script>
+
+          <form action="#" method="POST" class="space-y-6">
+            <div>
+              <label
+                for="email"
+                class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                >Email address</label
+              >
+              <div class="mt-1">
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  required
+                  placeholder="you@example.com"
+                  class="block w-full appearance-none rounded-lg border border-gray-300 bg-background-light px-3 py-3 placeholder-gray-400 shadow-sm focus:border-primary focus:outline-none focus:ring-primary dark:border-gray-600 dark:bg-background-dark dark:text-white dark:placeholder-gray-500 sm:text-sm"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label
+                for="password"
+                class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                >Password</label
+              >
+              <div class="mt-1">
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  autocomplete="current-password"
+                  required
+                  placeholder="••••••••"
+                  class="block w-full appearance-none rounded-lg border border-gray-300 bg-background-light px-3 py-3 placeholder-gray-400 shadow-sm focus:border-primary focus:outline-none focus:ring-primary dark:border-gray-600 dark:bg-background-dark dark:text-white dark:placeholder-gray-500 sm:text-sm"
+                />
+              </div>
+            </div>
+
+            <div class="flex items-center justify-end">
+              <div class="text-sm">
+                <a
+                  href="Recovery.html"
+                  class="font-medium text-primary hover:text-primary/80"
+                  >Forgot your password?</a
+                >
+              </div>
+            </div>
+
+            <div>
+              <button
+                type="submit"
+                class="flex w-full justify-center rounded-lg bg-primary px-4 py-3 text-sm font-bold text-white shadow-sm hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:ring-offset-background-dark"
+              >
+                Sign in
+              </button>
+            </div>
+          </form>
+
+          <div class="relative">
+            <div class="relative flex justify-center text-sm">
+              <span
+                class="px-2 text-gray-500 dark:bg-background-dark dark:text-gray-400"
+                >Or continue with</span
+              >
+            </div>
+          </div>
+
+          <div>
+            <a
+              href="#"
+              class="flex w-full justify-center rounded-lg border border-gray-300 bg-background-light px-4 py-3 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 dark:border-gray-600 dark:bg-background-dark dark:text-gray-300 dark:hover:bg-gray-800"
+              >Create an account</a
+            >
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
